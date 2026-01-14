@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pink To-Do List ✨</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Beautiful Animated Background -->
+    <div class="animated-bg">
+        <div class="floating-element">💖</div>
+        <div class="floating-element">✨</div>
+        <div class="floating-element">🌸</div>
+        <div class="floating-element">💕</div>
+        <div class="floating-element">🎀</div>
+        <div class="floating-element">🌟</div>
+        <div class="floating-element">💗</div>
+        <div class="floating-element">🦋</div>
+    </div>
+
+    <div class="container">
+        <!-- Left Panel -->
+        <div class="input-section">
+            <div class="header-section">
+                <h1>
+                    <i class="fas fa-sparkles"></i>
+                    Create Your List
+                </h1>
+                <p>Organize your tasks!</p>
+            </div>
+
+            <div class="scrollable-input-content">
+                <div class="input-group">
+                    <label class="input-label">LIST NAME</label>
+                    <input type="text" class="list-name-input" id="listName" placeholder="My To-Do List">
+                </div>
+
+                <div class="input-group">
+                    <label class="input-label">ADD TASKS</label>
+                    <div class="task-input-group">
+                        <input type="text" class="task-input" id="taskInput" placeholder="What needs to be done?">
+                        <button class="add-task-btn" onclick="addTempTask()">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="temp-tasks-list" id="tempTasksList"></div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn btn-create" onclick="createTodoList()">
+                    <i class="fas fa-magic"></i> Create List
+                </button>
+                <button class="btn btn-saved" onclick="openSavedLists()">
+                    <i class="fas fa-folder-open"></i> Saved Lists
+                </button>
+            </div>
+        </div>
+
+        <!-- Right Panel -->
+        <div class="display-section">
+            <div class="todo-board" id="todoBoard">
+                <div class="empty-state">
+                    <i class="fas fa-clipboard-list"></i>
+                    <h2>Your To-Do List Will Appear Here</h2>
+                    <p>Start by adding tasks on the left!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Saved Lists -->
+    <div class="modal" id="savedListsModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeSavedLists()">×</button>
+            <h2><i class="fas fa-folder-open"></i> Saved Lists</h2>
+            <div id="savedListsContainer"></div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
